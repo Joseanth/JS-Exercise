@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="EN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>ADD TO PARENT TABLE</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container mt-4">
+      <h3>ADD TO PARENT TABLE</h3>
+      <hr class="mb-4">
+
+      <script> 
+          function timeNOw() {
+            var dateNow = new Date();
+            var getMinutes = dateNow.getMinutes();
+            var getHour = dateNow.getHours();
+            var currentTime = document.getElementById('currentTime').innerHTML = getHour + ':' + getMinutes; 
+          }
+        
+        function addRow() {
+          // get input values
+          var currentTimeNow = document.getElementById('currentTime').innerHTML;
+          var firstName = document.getElementById('firstName').value;
+          var lastName = document.getElementById('lastName').value;
+          var age = document.getElementById('age').value;
+          var emailAddress = document.getElementById('emailAddress').value;
+          
+          if (firstName == null || firstName == "") {
+            emailError = "<div class='alert alert-danger pt-2 pb-2' role='alert'>Enter first name</div>"; 
+            document.getElementById("message").innerHTML = emailError;
+            return false;
+          } 
+
+          if (lastName == null || lastName == "") {
+            emailError = "<div class='alert alert-danger pt-2 pb-2' role='alert'>Enter last name</div>"; 
+            document.getElementById("message").innerHTML = emailError;
+            return false;
+          }
+          
+          if (age == null || age == "") {
+            emailError = "<div class='alert alert-danger pt-2 pb-2' role='alert'>Enter age</div>"; 
+            document.getElementById("message").innerHTML = emailError;
+            return false;
+          }
+          
+          if (emailAddress == null || emailAddress == "") {
+            emailError = "<div class='alert alert-danger pt-2 pb-2' role='alert'>Enter email address</div>"; 
+            document.getElementById("message").innerHTML = emailError;
+            return false;
+          }
+
+          var table = document.getElementsByTagName('table')[0];
+          var newRow = table.insertRow(1);
+          
+          var cel1 = newRow.insertCell(0);
+          var cel2 = newRow.insertCell(1);
+          var cel3 = newRow.insertCell(2);
+          var cel4 = newRow.insertCell(3);
+          var cel5 = newRow.insertCell(3);
+
+          cel1.innerHTML = currentTimeNow;
+          cel2.innerHTML = firstName;
+          cel3.innerHTML = lastName;
+          cel4.innerHTML = age;
+          cel5.innerHTML = emailAddress;
+           
+
+
+        }
+      </script>
+  
+      <div id="message"></div>
+      <div class="form-group row">
+        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">TIME :</label>
+        <div class="col-sm-10">
+          <p id="currentTime">
+            <script>
+              timeNOw();
+            </script>
+          </p>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">FIRST NAME :</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control form-control-sm" id="firstName">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">LAST NAME :</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control form-control-sm" id="lastName">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">AGE :</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control form-control-sm" id="age">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Email :</label>
+        <div class="col-sm-10">
+          <input type="email" class="form-control form-control-sm" id="emailAddress">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-10">
+          <button class="btn btn-primary btn-block" type="submit" onclick="addRow()">ADD ROW</button>
+        </div>
+      </div>
+ 
+      <hr class="mt-4 mb-2q">
+      <h3>SHOW RESULT</h3>
+
+      <table class="table table-bordered">
+        <tr>
+            <th>Time</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Age</th>
+            <th>Email</th>
+        </tr>
+      </table>
+   
+    </div>
+  </body>
+</html>
