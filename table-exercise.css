@@ -13,7 +13,7 @@
 .popup-content {
   height: 460px;
   width: 50%;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.9);
   padding: 30px;
   border-radius: 5px;
   position: relative;
