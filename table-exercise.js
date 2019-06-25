@@ -1,9 +1,3 @@
-// // popup
-// function myFunction() {
-//   var myWindow = window.open("", "MsgWindow", "width=400,height=400");
-//   myWindow.document.write("");
-// }
- 
 document.getElementById("button").addEventListener("click", function() {
   document.querySelector(".popup").style.display = "flex";
 })
@@ -59,7 +53,7 @@ function addRow() {
   var cel2 = newRow.insertCell(1);
   var cel3 = newRow.insertCell(2);
   var cel4 = newRow.insertCell(3);
-  var cel5 = newRow.insertCell(3);
+  var cel5 = newRow.insertCell(4);
 
   cel1.innerHTML = currentTimeNow;
   cel2.innerHTML = firstName;
