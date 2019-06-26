@@ -40,11 +40,27 @@ function addRow() {
     return false;
   }
   
+  if (isNaN(age)) {
+    emailError = "<div class='alert alert-danger pt-1 pb-1' role='alert'>Age must be enter in number</div>"; 
+    document.getElementById("message").innerHTML = emailError;
+    return false;
+  }
+  
   if (emailAddress == null || emailAddress == "") {
     emailError = "<div class='alert alert-danger pt-1 pb-1' role='alert'>Enter email address</div>"; 
     document.getElementById("message").innerHTML = emailError;
     return false;
   }
+
+  // validate email address
+  var addAt = emailAddress.indexOf("@");
+  var addDot = emailAddress.lastIndexOf(".");
+  if (addAt<1 || addDot<addAt+2 || addDot+2>=emailAddress.length) {
+    emailError = "<div class='alert alert-danger pt-1 pb-1' role='alert'>Invalid email address</div>"; 
+    document.getElementById("message").innerHTML = emailError;
+    return false;
+  }
+
 
   var table = document.getElementsByTagName('table')[0];
   var newRow = table.insertRow(1);
