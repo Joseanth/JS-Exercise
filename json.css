@@ -4,3 +4,7 @@ th, td {
 .note {
 	font-size: .8em;
 }
+.file-link {
+  padding-left: 48px;
+  font-size: .8em;
+}
