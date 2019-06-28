@@ -7,16 +7,16 @@ $.getJSON("data.json", function(data) {
 })
 
 /** SCRIPT 2 */
-// $.ajax({
-//   url: 'json-file.json',
-//   dataType: 'json',
-//   type: 'get',
-//   cache: false,
-//   success: function(data) {
-//      $(data.Sales).each(function(index, value) { 
-//       $("#showData").append("<tr><td>"+value.Orders.orderId+"</td><td>"+value.Orders.Sales.id+"</td><td>"+value.Orders.Sales.SalesName+"</td><td>"+value.Orders.Sales.orderdate+"</td><td>"+value.Orders.Sales.Products.id+"</td><td>"+value.Orders.Sales.Products.productname+"</td><td>"+value.Orders.Sales.Products.Price+"</td><td>"+value.Orders.Sales.Customer.companyname+"</td><td>"+value.Orders.Sales.Customer.contactname+"</td></tr>"); 
-//      });
-//   }
-// });
+$.ajax({
+  url: 'json-file.json',
+  dataType: 'json',
+  type: 'get',
+  cache: false,
+  success: function(data) {
+     $(data.Sales).each(function(index, value) { 
+      $("#showData2").append("<tr><td>"+value.Orders.orderId+"</td><td>"+value.Orders.Sales.id+"</td><td>"+value.Orders.Sales.SalesName+"</td><td>"+value.Orders.Sales.orderdate+"</td><td>"+value.Orders.Sales.Products.id+"</td><td>"+value.Orders.Sales.Products.productname+"</td><td>"+value.Orders.Sales.Products.Price+"</td><td>"+value.Orders.Sales.Customer.companyname+"</td><td>"+value.Orders.Sales.Customer.contactname+"</td></tr>"); 
+     });
+  }
+});
  
  
