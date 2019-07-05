@@ -7,69 +7,38 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
-    <div class="container mt-5">
-      <h1>SIN VALIDATOR</h1>
-      <hr>
-
-      <script>
-
-        function validate() {
-          var sinNum = document.getElementById("sinVal").value;
-
-          // adding background on alert message 
-          var classPrimary = document.getElementById("message");
-          console.log(classPrimary.classList);
-          classPrimary.classList.add('alert-primary');
-
-          // check field if empty
-          if (sinNum == "") {
-            document.getElementById("message").innerHTML = "Please enter SIN number!";
-            return false;
-          }
-
-          // check if value is not number
-          if (isNaN(sinNum)) {
-            document.getElementById("message").innerHTML = "SIN must be number only!";
-            return false;
-          }
-
-          // check if value is less than 9
-          if (sinNum.length<9) {
-            document.getElementById("message").innerHTML = "SIN must be 9 digit only!";
-            return false;
-          }
-
-          // check if value is greater than 9
-          if (sinNum.length>9) {
-            document.getElementById("message").innerHTML = "SIN must be 9 digit only!";
-            return false;
-          }
-
-
-          // removing the last digit
-          var sinEight = sinNum.substring(0, sinNum.length - 1);
-          
-          document.getElementById("message").innerHTML = "SIN Number: " + sinEight;
-            
-        }
-
-      </script>
- 
-      <form onsubmit=" return validate()">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="form-group">
-              <label>Enter SIN Number</label>
-              <input class="form-control" type="text" placeholder="" id="sinVal">
-            </div>
-            <button type="button" class="btn btn-primary mb-3" onclick="validate()">Validate</button>            
-            <p class="alert" id="message"></p>            
-            <p class="alert" id="message2"></p> 
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col-md-6">
+          <div class="jumbotron rounded-0">
+            <form onsubmit="return validate()">
+              <h1 class="text-center">SIN VALIDATOR</h1>
+              <hr> 
+              <div class="form-group">
+                <label>Enter SIN Number:</label>
+                <input class="form-control rounded-0" type="text" placeholder="" id="sinVal">
+              </div>
+              <div class="row">
+                  <div class="col-md-6">
+                    <button type="button" class="btn btn-secondary rounded-0 btn-sm btn-block" onclick="clearSin()">Clear</button>   
+                  </div>
+                <div class="col-md-6">
+                  <button type="button" class="btn btn-primary rounded-0 btn-sm btn-block" onclick="validate()">Validate</button> 
+                </div>
+              </div>
+              <p class="alert rounded-0 p-1 pl-2 mt-3" id="message"></p>
+              <!-- show test output here
+                <p class="alert rounded-0 pt-1 pb-1 mb-0" id="message1"></p>         
+                <p class="alert rounded-0 pt-1 pb-1 mb-0" id="message2"></p>
+                <p class="alert rounded-0 pt-1 pb-1 mb-0" id="message3"></p>
+              -->
+            </form>
           </div>
         </div>
-      </form> 
+      </div>
 
     </div>
-    </div>
+  
+  <script type="text/javascript" src="sin.js"></script>
   </body>
 </html>
