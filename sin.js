@@ -13,7 +13,6 @@ function validate() {
   console.log(classPrimary.classList);
   classPrimary.classList.add('alert-primary');
 
-
   // check field if empty
   if (sinNum == "") {
     document.getElementById("message").innerHTML = "Please enter SIN number!";
